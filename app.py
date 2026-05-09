@@ -21,11 +21,15 @@ def get_ydl_opts(extra_opts=None):
         'no_warnings': True,
         'retries': 30,
         'ignoreerrors': True,
-        'age_limit': 99,
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web'],
+                'skip': ['hls', 'dash'],
+            }
+        },
     }
     if os.path.exists(COOKIE_FILE):
         opts['cookiefile'] = COOKIE_FILE
-        print(f"[Cookie] Loaded")
     if extra_opts:
         opts.update(extra_opts)
     return opts
