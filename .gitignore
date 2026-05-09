@@ -1,8 +1,0 @@
-app_backup_*.py
-cookies.txt
-www.youtube.com_cookies.txt
-*.exe
-*.bat
-package-lock.json
-__pycache__/
-*.pyc
